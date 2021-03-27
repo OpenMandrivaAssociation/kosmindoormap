@@ -1,12 +1,12 @@
 %define major %(echo %{version} |cut -d. -f1)
-%define libname %mklibname KOSM %{major}
+%define libname %mklibname KOSM
 %define devname %mklibname -d KOSM
 
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	Indoor mapping application
 Name:		kosmindoormap
 Version:	21.03.80
-Release:	1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://kde.org/
@@ -33,6 +33,8 @@ Public transport application for Plasma
 %package -n %{libname}
 Summary:	Library for reading public transport information
 Group:		System/Libraries
+%rename %mklibname KOSM 20
+%rename %mklibname KOSM 21
 
 %description -n %{libname}
 Library for reading public transport information
