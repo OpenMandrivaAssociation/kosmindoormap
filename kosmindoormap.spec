@@ -2,15 +2,18 @@
 %define libname %mklibname KOSM
 %define devname %mklibname -d KOSM
 
+%global optflags %{optflags} -DPROTOBUF_USE_DLLS
+
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	Indoor mapping application
 Name:		kosmindoormap
 Version:	22.12.3
-Release:	1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://kde.org/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		kosmindoormap-22.12.3-protobuf-22.1.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(KF5I18n)
@@ -21,6 +24,7 @@ BuildRequires:	cmake(ZLIB)
 BuildRequires:	cmake(FLEX)
 BuildRequires:	cmake(BISON)
 BuildRequires:	cmake(Protobuf)
+BuildRequires:	cmake(absl)
 BuildRequires:	bison flex
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(protobuf)
