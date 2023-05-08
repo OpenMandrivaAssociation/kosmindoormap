@@ -9,7 +9,7 @@
 Summary:	Indoor mapping application
 Name:		kosmindoormap
 Version:	23.04.0
-Release:	2
+Release:	3
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://kde.org/
@@ -30,8 +30,8 @@ BuildRequires:	cmake(absl)
 BuildRequires:	bison flex
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(protobuf)
-BuildRequires:	cmake
-BuildRequires:	ninja
+BuildRequires:	osmctools
+Requires:	osmctools
 
 %description
 Public transport application for Plasma.
