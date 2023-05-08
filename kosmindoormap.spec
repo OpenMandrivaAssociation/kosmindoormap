@@ -4,11 +4,12 @@
 
 %global optflags %{optflags} -DPROTOBUF_USE_DLLS
 
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define stable %([ "%(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
+
 Summary:	Indoor mapping application
 Name:		kosmindoormap
 Version:	23.04.0
-Release:	1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://kde.org/
@@ -18,6 +19,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KPublicTransport)
+BuildRequires:	cmake(KOpeningHours)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(ZLIB)
@@ -32,7 +34,7 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 
 %description
-Public transport application for Plasma
+Public transport application for Plasma.
 
 %package -n %{libname}
 Summary:	Library for reading public transport information
@@ -41,7 +43,7 @@ Group:		System/Libraries
 %rename %mklibname KOSM 21
 
 %description -n %{libname}
-Library for reading public transport information
+Library for reading public transport information.
 
 %files -n %{libname} -f kosmindoormap.lang
 %{_libdir}/libKOSM.so.*
@@ -54,7 +56,7 @@ Summary:	Development files for %{libname}
 Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for %{libname}
+Development files for %{libname}.
 
 %files -n %{devname}
 %{_includedir}/KOSM
