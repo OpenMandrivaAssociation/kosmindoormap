@@ -8,13 +8,13 @@
 
 Summary:	Indoor mapping application
 Name:		kosmindoormap
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://kde.org/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		kosmindoormap-22.12.3-protobuf-22.1.patch
+#Patch0:		kosmindoormap-22.12.3-protobuf-22.1.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(KF5I18n)
