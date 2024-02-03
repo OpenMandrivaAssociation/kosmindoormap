@@ -1,0 +1,12 @@
+diff -up kosmindoormap-23.03.90/src/osm/io/CMakeLists.txt.omv~ kosmindoormap-23.03.90/src/osm/io/CMakeLists.txt
+--- kosmindoormap-23.03.90/src/osm/io/CMakeLists.txt.omv~	2023-04-15 18:51:32.001922532 +0200
++++ kosmindoormap-23.03.90/src/osm/io/CMakeLists.txt	2023-04-15 18:51:44.399019666 +0200
+@@ -19,7 +19,7 @@ if (Protobuf_FOUND AND Protobuf_PROTOC_E
+     set_target_properties(KOSM_pbfioplugin PROPERTIES POSITION_INDEPENDENT_CODE ON)
+     target_link_libraries(KOSM_pbfioplugin
+         PUBLIC KOSM
+-        PRIVATE ${Protobuf_LIBRARIES} ZLIB::ZLIB
++        PRIVATE ${Protobuf_LIBRARIES} ZLIB::ZLIB absl_log_internal_check_op absl_log_internal_message
+     )
+ endif()
+ 
