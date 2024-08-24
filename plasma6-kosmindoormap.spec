@@ -11,7 +11,7 @@
 
 Summary:	Indoor mapping application
 Name:		plasma6-kosmindoormap
-Version:	24.05.2
+Version:	24.08.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
@@ -39,6 +39,8 @@ BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(protobuf)
 BuildRequires:	osmctools
 Requires:	osmctools
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Public transport application for Plasma.
@@ -52,10 +54,12 @@ Group:		System/Libraries
 %description -n %{libname}
 Library for reading public transport information.
 
-%files -n %{libname} -f kosmindoormap.lang
+%files -n %{libname} -f %{name}.lang
 %{_libdir}/libKOSM.so.*
 %{_libdir}/libKOSMIndoorMap.so.*
+%{_libdir}/libKOSMIndoorRouting.so.*
 %{_qtdir}/qml/org/kde/kosmindoormap
+%{_qtdir}/qml/org/kde/kosmindoorrouting
 %{_qtdir}/qml/org/kde/osm
 %{_datadir}/qlogging-categories6/org_kde_kosmindoormap.categories
 
@@ -69,22 +73,12 @@ Development files for %{libname}.
 %files -n %{devname}
 %{_includedir}/KOSM
 %{_includedir}/KOSMIndoorMap
+%{_includedir}/KOSMIndoorRouting
 %{_includedir}/kosm
 %{_includedir}/kosmindoormap
 %{_includedir}/kosmindoormap_version.h
+%{_includedir}/kosmindoorrouting
 %{_libdir}/libKOSM.so
 %{_libdir}/libKOSMIndoorMap.so
+%{_libdir}/libKOSMIndoorRouting.so
 %{_libdir}/cmake/KOSMIndoorMap
-
-%prep
-%autosetup -p1 -n kosmindoormap-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang kosmindoormap
