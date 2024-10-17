@@ -12,7 +12,7 @@ Version:	23.08.5
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
-Url:		http://kde.org/
+Url:		https://kde.org/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 #Patch0:		kosmindoormap-22.12.3-protobuf-22.1.patch
 BuildRequires:	cmake(ECM)
