@@ -11,7 +11,7 @@
 
 Summary:	Indoor mapping application
 Name:		plasma6-kosmindoormap
-Version:	24.12.0
+Version:	24.12.1
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
