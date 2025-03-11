@@ -37,6 +37,7 @@ BuildRequires:	cmake(absl)
 BuildRequires:	bison flex
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(protobuf)
+BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	osmctools
 Requires:	osmctools
 BuildSystem:	cmake
