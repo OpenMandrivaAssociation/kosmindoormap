@@ -11,7 +11,7 @@
 
 Summary:	Indoor mapping application
 Name:		kosmindoormap
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
@@ -42,6 +42,8 @@ BuildRequires:	osmctools
 Requires:	osmctools
 BuildSystem:	cmake
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+%rename plasma6-kosmindoormap
 
 %description
 Public transport application for Plasma.
