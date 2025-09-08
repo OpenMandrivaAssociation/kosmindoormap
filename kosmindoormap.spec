@@ -37,6 +37,7 @@ BuildRequires:	cmake(absl)
 BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6Service)
+BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	bison flex
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(protobuf)
