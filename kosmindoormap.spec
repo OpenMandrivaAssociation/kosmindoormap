@@ -11,7 +11,7 @@
 
 Summary:	Indoor mapping application
 Name:		kosmindoormap
-Version:	25.12.0
+Version:	25.12.1
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
