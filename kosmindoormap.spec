@@ -11,7 +11,7 @@
 
 Summary:	Indoor mapping application
 Name:		kosmindoormap
-Version:	26.04.3
+Version:	26.08.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
@@ -89,3 +89,5 @@ Development files for %{libname}.
 %{_libdir}/libKOSMIndoorMap.so
 %{_libdir}/libKOSMIndoorRouting.so
 %{_libdir}/cmake/KOSMIndoorMap
+%{_qtdir}/metatypes/qt6kosmindoormap_metatypes.json
+%{_qtdir}/metatypes/qt6kosmindoorrouting_metatypes.json
